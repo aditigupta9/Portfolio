@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditi Gupta | Aspiring Cloud Engineer</title>
+    <meta name="description" content="Portfolio of Aditi Gupta - Computer Science Engineering student and aspiring Cloud Engineer specializing in AWS, cloud infrastructure, and scalable technologies.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#0B1120",
+                        primary: "#2563EB",
+                        accent: "#06B6D4",
+                        "text-light": "#F1F5F9",
+                        "text-gray": "#94A3B8"
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'heading': ['Space Grotesk', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.5s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.7 }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glassmorphism {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cloud-bg {
+            background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+                       radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                       radial-gradient(circle at 40% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.3);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.4);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #2563EB, #06B6D4);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-background text-text-light font-sans overflow-x-hidden">
+    <!-- Animated Background Elements -->
+    <div class="fixed inset-0 cloud-bg pointer-events-none"></div>
+    <div class="fixed top-10 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="fixed bottom-20 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float"></div>
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 glassmorphism">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    Aditi Gupta
+                </a>
+                <ul id="nav-list" class="hidden md:flex items-center space-x-8"></ul>
+                <button id="mobile-menu-btn" class="md:hidden text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="md:hidden mt-4 hidden">
+                <ul id="mobile-nav-list" class="space-y-4"></ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 pb-32 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6">
+                    Aditi <span class="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Gupta</span>
+                </h1>
+                <div class="mb-8">
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+                        Aspiring Cloud Engineer | AWS Learner | Computer Science Engineer
+                    </h2>
+                    <p class="text-xl text-text-gray max-w-3xl mx-auto md:mx-0">
+                        Learning. Building. Optimizing. Growing in the Cloud.
+                    </p>
+                </div>
+                <p class="text-lg text-text-gray mb-10 max-w-2xl mx-auto md:mx-0">
+                    An aspiring Cloud Engineer with a passion for AWS, infrastructure, and modern technologies. I thrive on solving complex problems, building impactful projects, and continuously expanding my expertise to create cloud solutions that are scalable, efficient, and future-ready.
+                </p>
+                <div id="hero-buttons" class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold mb-12 relative section-title">About Me</h2>
+            <div class="glassmorphism rounded-2xl p-8">
+                <p class="text-lg mb-6">
+                    My journey in technology began with web development, but I soon became fascinated by the cloud technologies that power modern applications behind the scenes. This interest led me to explore Cloud Computing, scalable infrastructure, and resource optimization.
+                </p>
+                <p class="text-lg mb-6">
+                    With a background in Computer Science Engineering, hands-on project experience, and leadership opportunities, I have built a strong foundation in problem-solving, collaboration, and developing practical technology solutions. My work focuses on creating systems that are efficient, reliable, and designed to address real-world challenges.
+                </p>
+                <p class="text-lg mb-6">
+                    I am passionate about continuous learning and aspire to build efficient, scalable, and impactful cloud solutions that address real-world challenges.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-heading font-bold mb-12 text-center relative section-title inline-block">Skills & Expertise</h2>
+            <div id="skills-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-heading font-bold mb-12 text-center relative section-title inline-block">Featured Projects</h2>
+            <div id="projects-container" class="grid grid-cols-1 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold mb-12 relative section-title">Experience</h2>
+            <div class="glassmorphism rounded-2xl p-8">
+                <h3 class="text-2xl font-semibold mb-2">Software Development Intern</h3>
+                <p class="text-accent text-lg mb-4">IT Kalka Solutions | Jan 2025 – Mar 2025</p>
+                <ul id="experience-list" class="space-y-3"></ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h2 class="text-3xl font-heading font-bold mb-8 relative section-title">Education</h2>
+                    <div class="glassmorphism rounded-2xl p-8">
+                        <h3 class="text-2xl font-semibold mb-2">Sharda University</h3>
+                        <p class="text-lg mb-4">Bachelor of Technology – Computer Science Engineering</p>
+                        <p class="text-text-gray mb-2">CGPA: 7.7</p>
+                        <p class="text-text-gray">Expected Graduation: 2027</p>
+                    </div>
+                </div>
+
+                <!-- Certifications & Leadership -->
+                <div>
+                    <h2 class="text-3xl font-heading font-bold mb-8 relative section-title">Certifications & Leadership</h2>
+                    <div class="space-y-6">
+                        <div class="glassmorphism rounded-2xl p-8">
+                            <h3 class="text-xl font-semibold mb-4">Certifications</h3>
+                            <ul id="certifications-list" class="space-y-2"></ul>
+                        </div>
+                        <div class="glassmorphism rounded-2xl p-8">
+                            <h3 class="text-xl font-semibold mb-4">Leadership & Activities</h3>
+                            <ul id="leadership-list" class="space-y-2"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-heading font-bold mb-4 text-center glow-text">Let's Build Something Amazing Together</h2>
+            <p class="text-text-gray text-center mb-12 text-lg">Get in touch for opportunities, collaborations, or just to connect!</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <div class="glassmorphism rounded-2xl p-8 mb-8">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        <div id="contact-info" class="space-y-4"></div>
+                    </div>
+                    <div id="social-links" class="flex justify-center space-x-6"></div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glassmorphism rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-background/50 border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-background/50 border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 bg-background/50 border border-gray-700 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-accent text-white font-semibold py-3 rounded-lg hover:opacity-90 transition transform hover:-translate-y-1">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-heading font-bold mb-2">Aditi Gupta</h3>
+                    <p class="text-text-gray">Aspiring Cloud Engineer | AWS Learner</p>
+                </div>
+                <div id="footer-social-links" class="flex space-x-6 mb-6 md:mb-0"></div>
+                <button id="scroll-top" class="bg-primary text-white p-3 rounded-full hover:bg-accent transition transform hover:-translate-y-1">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-text-gray text-sm">
+                <p>&copy; 2024 Aditi Gupta. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Layer
+        const navigationItems = [
+            { "label": "Home", "href": "#home" },
+            { "label": "About", "href": "#about" },
+            { "label": "Skills", "href": "#skills" },
+            { "label": "Projects", "href": "#projects" },
+            { "label": "Experience", "href": "#experience" },
+            { "label": "Education", "href": "#education" },
+            { "label": "Certifications", "href": "#education" },
+            { "label": "Contact", "href": "#contact" }
+        ];
+
+        const heroButtons = [
+            { "text": "View Projects", "href": "#projects", "icon": "fas fa-code", "variant": "primary" },
+            { "text": "Download Resume", "href": "#", "icon": "fas fa-download", "variant": "outline" },
+            { "text": "Contact Me", "href": "#contact", "icon": "fas fa-envelope", "variant": "accent" }
+        ];
+
+        const skillsData = [
+            {
+                "category": "Cloud & Infrastructure",
+                "skills": ["AWS Fundamentals", "Cloud Monitoring", "Cloud Resource Optimization", "Cloud Sustainability", "Networking Basics"]
+            },
+            {
+                "category": "Programming",
+                "skills": ["Python", "Java", "SQL"]
+            },
+            {
+                "category": "Web Development",
+                "skills": ["HTML", "CSS", "Django"]
+            },
+            {
+                "category": "Tools & Core Concepts",
+                "skills": ["Git", "GitHub", "VS Code", "PyCharm", "OOP", "DBMS", "Problem Solving"]
+            }
+        ];
+
+       const projectsData = [
+    {
+        "title": "Intelligent Cloud Resource Optimization System",
+        "description": "Built a cloud monitoring system to track resource usage and performance of cloud services in real time. Created dashboards to visualize usage patterns and understand system performance more clearly. Identified underused resources by analyzing usage data and suggested ways to optimize them. Helped improve resource utilization and reduce unnecessary cloud costs.",
+        "tags": ["AWS", "Python", "Cloud Monitoring", "Data Analysis"],
+        "image": "https://i.pinimg.com/736x/99/d2/da/99d2da2373d575a0f2862ba49d1781ca.jpg"
+    },
+    {
+        "title": "Cloud Carbon Attribution & Forecasting Platform (CCAFP)",
+        "description": "Developed a platform to track and analyze carbon emissions generated from cloud workloads. Designed dashboards to show resource usage and its environmental impact in a simple way. Used basic forecasting techniques to estimate future carbon emissions trends. Helped improve visibility into cloud usage and support more sustainable decisions.",
+        "tags": ["Python", "Data Analytics", "Forecasting", "Dashboard"],
+        "image": "https://i.pinimg.com/736x/c7/79/53/c77953c4c80a1ce748baedc200cea7f0.jpg"
+    },
+    {
+        "title": "LinguoMate – AI Learning Companion",
+        "description": "Built an AI-based language learning platform to help users practice and improve communication skills. Implemented real-time conversation practice with feedback to improve fluency. Added grammar correction features to help users learn from mistakes. Designed a simple and interactive interface to make learning more engaging.",
+        "tags": ["AI", "Django", "Python", "Web App"],
+        "image": "https://i.pinimg.com/1200x/22/20/30/222030a51925769485cfcdfb10bd4a88.jpg"
+    }
+];
+
+        const experiencePoints = [
+            "Developed and maintained websites using Django, HTML, and CSS.",
+            "Worked on responsive UI development.",
+            "Performed debugging, testing, and issue resolution.",
+            "Collaborated on real client projects."
+        ];
+
+        const certifications = [
+            "Web Development (Udemy)",
+            "Java Foundations (Oracle)"
+        ];
+
+        const leadershipActivities = [
+            "Student Placement Representative (SPR)",
+            "Hosted Alumni Session at Sharda University",
+            "Active Member of Entrepreneurship Cell (E-Cell)",
+            "Organized student events and interactive sessions"
+        ];
+
+        const contactInfo = [
+            { "icon": "fas fa-envelope", "text": "aditi22182@gmail.com", "type": "email" },
+            { "icon": "fab fa-linkedin", "text": "linkedin.com/in/aditi-gupta-tech", "type": "linkedin" },
+            { "icon": "fab fa-github", "text": "github.com/aditigupta9", "type": "github" }
+        ];
+
+        const socialLinks = [
+            { "icon": "fab fa-linkedin", "href": "https://linkedin.com/in/aditi-gupta-tech", "label": "LinkedIn" },
+            { "icon": "fab fa-github", "href": "https://github.com/aditigupta9", "label": "GitHub" },
+            { "icon": "fab fa-twitter", "href": "#", "label": "Twitter" },
+            { "icon": "fab fa-instagram", "href": "#", "label": "Instagram" }
+        ];
+
+        // Reusable Render Functions
+        function renderNavigation(items) {
+            return items.map(item => 
+                `<li><a href="${item.href}" class="text-text-gray hover:text-white hover:glow-text transition-colors duration-300 font-medium">${item.label}</a></li>`
+            ).join("");
+        }
+
+        function renderHeroButtons(buttons) {
+            return buttons.map(button => {
+                const baseClasses = "px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 ";
+                const variants = {
+                    primary: "bg-primary text-white hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20",
+                    outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
+                    accent: "bg-accent text-white hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/20"
+                };
+                return `<a href="${button.href}" class="${baseClasses} ${variants[button.variant]}">${button.text} <i class="${button.icon}"></i></a>`;
+            }).join("");
+        }
+
+        function renderSkills(skillsData) {
+            return skillsData.map(category => `
+                <div class="skill-card glassmorphism rounded-xl p-6 transition-all duration-300">
+                    <h3 class="text-xl font-semibold mb-4 text-accent">${category.category}</h3>
+                    <ul class="space-y-2">
+                        ${category.skills.map(skill => `<li class="flex items-center"><i class="fas fa-check text-primary mr-3"></i>${skill}</li>`).join("")}
+                    </ul>
+                </div>
+            `).join("");
+        }
+
+        function renderProjects(projects) {
+            return projects.map(project => `
+                <div class="project-card glassmorphism rounded-2xl overflow-hidden transition-all duration-300">
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">${project.title}</h3>
+                        <p class="text-text-gray mb-4">${project.description}</p>
+                        <div class="flex flex-wrap gap-2">
+                            ${project.tags.map(tag => `<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">${tag}</span>`).join("")}
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+        }
+
+        function renderListItems(items) {
+            return items.map(item => `<li class="flex items-start"><i class="fas fa-chevron-right text-accent mt-1 mr-3"></i>${item}</li>`).join("");
+        }
+
+        function renderContactInfo(info) {
+            return info.map(item => `
+                <div class="flex items-center">
+                    <i class="${item.icon} text-primary text-xl mr-4"></i>
+                    <span class="text-text-light">${item.text}</span>
+                </div>
+            `).join("");
+        }
+
+        function renderSocialLinks(links, isFooter = false) {
+            const sizeClass = isFooter ? "text-xl" : "text-2xl";
+            return links.map(link => `
+                <a href="${link.href}" target="_blank" class="${sizeClass} text-text-gray hover:text-white hover:scale-110 transition-transform duration-300" aria-label="${link.label}">
+                    <i class="${link.icon}"></i>
+                </a>
+            `).join("");
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navigation
+            document.getElementById('nav-list').innerHTML = renderNavigation(navigationItems);
+            document.getElementById('mobile-nav-list').innerHTML = renderNavigation(navigationItems);
+            
+            // Hero Section
+            document.getElementById('hero-buttons').innerHTML = renderHeroButtons(heroButtons);
+            
+            // Skills Section
+            document.getElementById('skills-container').innerHTML = renderSkills(skillsData);
+            
+            // Projects Section
+            document.getElementById('projects-container').innerHTML = renderProjects(projectsData);
+            
+            // Experience Section
+            document.getElementById('experience-list').innerHTML = renderListItems(experiencePoints);
+            
+            // Certifications & Leadership
+            document.getElementById('certifications-list').innerHTML = renderListItems(certifications);
+            document.getElementById('leadership-list').innerHTML = renderListItems(leadershipActivities);
+            
+            // Contact Section
+            document.getElementById('contact-info').innerHTML = renderContactInfo(contactInfo);
+            document.getElementById('social-links').innerHTML = renderSocialLinks(socialLinks);
+            
+            // Footer
+            document.getElementById('footer-social-links').innerHTML = renderSocialLinks(socialLinks, true);
+
+            // Mobile Menu Toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+                this.innerHTML = menu.classList.contains('hidden') ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+            });
+
+            // Smooth Scrolling
+            document.addEventListener('click', function(event) {
+                const link = event.target.closest('a[href^="#"]');
+                if (!link) return;
+                
+                event.preventDefault();
+                const targetId = link.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const target = document.querySelector(targetId);
+                if (target) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        document.getElementById('mobile-menu-btn').innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                    
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+
+            // Scroll to Top
+            document.getElementById('scroll-top').addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Contact Form Submission
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+
+            // Resume Download
+            document.querySelector('a[href="#"][class*="Download Resume"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Resume download simulation. In a real implementation, this would download the PDF.');
+            });
+
+            // Add scroll animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-slide-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections for animation
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
